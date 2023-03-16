@@ -1,8 +1,3 @@
-// El styles lo importamos aquí, ya se carga después al compilar todo
-
-// import catImage from '../assets/images/cat.jpeg'
-import '../scss/styles.scss';
-
 const cardLeftElement = document.getElementById('card-left');
 const cardRightElement = document.getElementById('card-right');
 const cardBingoElement = document.getElementById('card-bingo');
@@ -12,7 +7,6 @@ const numberBingoElement = document.getElementById('number-bingo');
 let timeoutId;
 let arrayNumbers = [];
 let bingoElements=[];
-
 
 
 const generateRandomNumber = () => {
@@ -52,7 +46,7 @@ const fillBingoCard = () => {
 const fragmentBingo = document.createDocumentFragment()
 for (let index = 1; index < 100; index++) {
     const numberElement = document.createElement('div');
-    numberElement.classList.add('number-container');
+    numberElement.classList.add('number-container-bingo');
     fragmentBingo.append(numberElement);
     numberElement.textContent = index;
     numberElement.dataset.number = index;
@@ -60,6 +54,7 @@ for (let index = 1; index < 100; index++) {
 }
 cardBingoElement.append(fragmentBingo);
  bingoElements = document.querySelectorAll('.number-container-bingo')
+
 
 }
 
@@ -76,7 +71,7 @@ const fillTextNumber = (number) => {
 
 const addClassOnBingoCard = () => {
     [...bingoElements].forEach(element => {
-    console.log(element.dataset.number)
+    console.log(element)
 })
 }
 
@@ -90,9 +85,7 @@ const spliceRandomNumber = () => {
     return randomNumberOfBingo
 }
 
-fillLeftCard()
-fillRightCard()
-fillBingoCard()
+
 
 spliceRandomNumber()
 addClassOnBingoCard()
@@ -100,3 +93,6 @@ fillArray()
 
 
 
+
+export {fillLeftCard, fillRightCard, fillBingoCard ,bingoElements}
+ 

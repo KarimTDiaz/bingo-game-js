@@ -1,0 +1,29 @@
+.cards-container{
+    display: flex;
+    gap: 2rem;
+}
+
+.card{
+
+    width: 600px;
+    height: 400px;
+    border: 2px solid black;
+    &--left,
+    &--right{
+        height: 350px;
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+
+    }
+    &--center{
+        display: grid;
+        grid-template-columns: repeat(11,1fr);
+
+    }
+}
+.number-container{
+    border: 2px solid black;
+    &-bingo{
+        border: 2px solid black;
+    }
+}
