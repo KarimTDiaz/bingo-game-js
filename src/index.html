@@ -5,20 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- PON UN FAVICON!!! -->
     <link rel="icon" type="image/svg+xml" href="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CAMBIA EL TITLE!!! -->
     <title>Vite Template</title>
   </head>
   <body>
     <header class="header">
-      <h1 class="title">BINGO</h1>
+      <img class="logo" src="assets/images/bingo.svg" alt="Titulo Bingo">
     </header>
 
     <main class="main">
       <div class="cards-container">
+        <div id="card-bingo" class="card card--bingo"></div>
+        <div class="game-cards">
       <div id="card-user" class="card card--user"></div>
-      <div id="card-bingo" class="card card--bingo"></div>
+      <div id="button-start" class="button button--start">START</div>
+      <div id="button-play-again" class="button button--play-again">PLAY AGAIN</div>
       <div id="card-pc" class="card card--pc"></div>
+    </div>
     </div>
 
     <span id="number-bingo" class="number-result"></span>
