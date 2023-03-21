@@ -7,7 +7,12 @@ import {
   createGameBoard,
   createBingoBoard
 } from './game-board.js';
-import { timer, arrayToExtract } from './game-rules.js';
+import {
+  timer,
+  arrayToExtract,
+  showButtonsNumbers,
+  showButtonPlayAgain
+} from './game-rules.js';
 
 const userCardElement = document.getElementById('card-user');
 const userPcElement = document.getElementById('card-pc');
@@ -18,17 +23,17 @@ const playAgainButtonElement = document.getElementById('button-play-again');
 let userNumbers = [];
 let pcNumbers = [];
 
-startButtonElement.addEventListener('click', () => {
-  timer();
-});
 arrayToExtract();
 createBingoBoard(cardBingoElement);
-
 fillCardsArray(userNumbers, 15);
 fillCardsArray(pcNumbers, 15);
-
 createGameBoard(userNumbers, userCardElement, ['number', 'number--user']);
 createGameBoard(pcNumbers, userPcElement, ['number', 'number--pc']);
+
+startButtonElement.addEventListener('click', () => {
+  showButtonsNumbers();
+  timer();
+});
 
 playAgainButtonElement.addEventListener('click', () => {
   cardBingoElement.innerHTML = '';
@@ -42,5 +47,7 @@ playAgainButtonElement.addEventListener('click', () => {
   fillCardsArray(pcNumbers, 15);
   createGameBoard(userNumbers, userCardElement, ['number', 'number--user']);
   createGameBoard(pcNumbers, userPcElement, ['number', 'number--pc']);
+  showButtonPlayAgain();
+  showButtonsNumbers();
   timer();
 });

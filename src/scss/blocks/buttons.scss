@@ -22,13 +22,15 @@
     &--play-again{
         font-size: 1.5rem;
         display: none;
-
+    }
+    &--numbers{
         
+    }
+    
+    &-unshow{
+        display: none;
     }
     &-show{
         display: block;
-    }
-    &-unshow{
-        display: none;
     }
 }
